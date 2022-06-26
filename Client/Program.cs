@@ -1,0 +1,14 @@
+using BlazorProject.Client;
+using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Syncfusion.Blazor;
+
+
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mgo+DSMBaFt/QHFqVVhkW1pFdEBBXHxAd1p/VWJYdVt5flBPcDwsT3RfQF9jT3xXdkBmUX1YeHFcRw==;Mgo+DSMBPh8sVXJ0S0d+XE9AcVRDX3xKf0x/TGpQb19xflBPallYVBYiSV9jS3xTcEdnWXpbeHZTTmdbUA==;ORg4AjUWIQA/Gnt2VVhhQlFaclhJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRdkNhXX9bdXxXQGhVUUU=;NjYxNTAyQDMyMzAyZTMxMmUzMENnN25wejdZSDNyQkJ4Q0cvU1JlOXFMWFNXc3pDSmYxWVpjTjRUTG1uVTg9;NjYxNTAzQDMyMzAyZTMxMmUzMENmTjJMMzgrNVpFSGxDaVlabVhEK0FnbFRLK0ZGSWYra0V1T2RGTlJtcmM9;NRAiBiAaIQQuGjN/V0Z+XU9EaFtFVmJLYVB3WmpQdldgdVRMZVVbQX9PIiBoS35RdEVlW3tedXFdRGZVV0F3;NjYxNTA1QDMyMzAyZTMxMmUzMFZrQWpPV1ZjaGVDZTJXZkk5ckRyeXpqeHcxemxXRUp4UTYrOHZPUllmVlU9;NjYxNTA2QDMyMzAyZTMxMmUzMGs3QjJmWk4rVXNaZTlPSDBVMzdIamY3Z3QwS3ZSbEtxTjQ3RUZ0dW1EM2c9;Mgo+DSMBMAY9C3t2VVhhQlFaclhJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRdkNhXX9bdXxXQWBfVkU=;NjYxNTA4QDMyMzAyZTMxMmUzMGZkcTY2TWRrYThGcUdSbUVBUDdQbzFiSGxURUd2bG1hK1Qvb2tIa1dwMDQ9;NjYxNTA5QDMyMzAyZTMxMmUzMGo0QXZIR3k4elVxK2VrVjZjQkVmb0tLNXdZRWNWc09hLzh2NjdjK25aL009");
+var builder = WebAssemblyHostBuilder.CreateDefault(args);
+builder.RootComponents.Add<App>("#app");
+builder.RootComponents.Add<HeadOutlet>("head::after");
+
+builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+builder.Services.AddSyncfusionBlazor();
+await builder.Build().RunAsync();
