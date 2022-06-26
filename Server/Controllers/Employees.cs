@@ -46,7 +46,7 @@ namespace BlazorProject.Server.Controllers
             catch (Exception)
             {
 
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error retriving the date");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retriving the data.");
             }
         }
 
@@ -68,7 +68,7 @@ namespace BlazorProject.Server.Controllers
             catch (Exception)
             {
 
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error retriving the date");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retriving the data.");
             }
         }
 
